@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Challenge-1</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <dir id="h1"><h1>Encriptador de Palabras</h1></dir>  
+    </head>
+
+    <body>
+        <div id="Caja1">
+                      
+            <form action=""id=form >
+                <br>INGRESE LA PALABRA: <input type="text" palabra="palabra" id="palabra" placeholder="PALABRA"><br>
+                <br><button type="button" onclick="getData()">Enviar</button>
+            </form>
+
+            <p>Recuerde que solo puede poner palabras en minuscula</p>
+            
+            <p id="valueInput"></p>
+            
+            <script>
+                var getData=function(){
+                    var palabrajava = document.getElementById("palabra").value;
+                    console.log(palabrajava);
+                    var text2 = palabrajava.replaceAll("e","enter");
+                    text3 = text2.replaceAll("i","imes");
+                    text4 = text3.replaceAll("o","ober");
+                    text5 = text4.replaceAll("a","ai");
+                    console.log(palabrajava);
+                    console.log(text2);
+                    console.log(text3);
+                    console.log(text4);
+                    console.log(text5);
+                    var text = document.getElementById("palabra2");
+                    text.value=text5; 
+                    var palabrajava = document.getElementById("palabra").value="";
+                }
+            </script>
+
+        </div>
+
+        <div id="Caja2">
+            <br>Texto Encriptado : <input type="text" palabra="palabra2" id="palabra2" placeholder="PALABRA"><br>
+            
+            <br><button type="button" onclick="Desencriptar()">Desencriptar</button>
+            <br>
+            <script>
+                var Desencriptar = function () {
+                    var palabraencr = document.getElementById('palabra2').value;
+                    var textb = palabraencr.replaceAll("enter","e");
+                    textc = textb.replaceAll("imes","i");
+                    textd = textc.replaceAll("ober","o");
+                    textf = textd.replaceAll("ai","a");
+                    console.log(palabraencr);
+                    console.log(textb);
+                    console.log(textc);
+                    console.log(textd);
+                    console.log(textf);
+                    var textlibre = document.getElementById("palabra2");
+                    textlibre.value=textf; 
+                    //var palabrajava = document.getElementById("palabra").value="";
+
+                    }
+            </script>
+            <br><button type="button" onclick="Copiar()">Copiar</button>
+            <script>
+            function Copiar() {
+                var content = document.getElementById('palabra2');
+                content.select();
+                document.execCommand('copy');
+                var temp = document.getElementById("palabra2").value=""; 
+                alert("Copied!");
+                }
+            </script>
+            <br>
+        </div> 
+</body>
+
+</html>
